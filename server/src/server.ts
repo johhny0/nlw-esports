@@ -82,7 +82,6 @@ app.post("/games/:id/ads", async (request, response) => {
     const gameId = request.params.id
     const body = request.body
 
-    console.log(body);
     // #TODO: ZOD JAVASCRIPT - Framework for validation
     const ad = await prisma.ad.create({
         data: {
@@ -96,7 +95,6 @@ app.post("/games/:id/ads", async (request, response) => {
             useVoiceChannel: body.useVoiceChannel,
         }
     })
-
 
     response.status(201).json(ad);
 })
